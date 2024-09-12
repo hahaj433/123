@@ -4,3 +4,4 @@ const authController =require('../controller/authController')
 router.post("/register",authController.registerUser);
 
 module.exports = router
+bruh
