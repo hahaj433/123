@@ -8,9 +8,9 @@ const UserRouter = require('./Routes/User.route');
 //config server
 dotenv.config();
 require('./utils/connections_mongodb')
-
+require('./models/userModel')
 const app = express();
-const PORT = process.env.PORT
+const PORT = '3000'
 
 app.use(cors())
 app.use(express.json())
@@ -18,6 +18,9 @@ app.use(express.json())
 app.get('/', (req, res) => {
   res.send('HOME')
 })
+
+
+console.log(mongoose.connection.readyState);
 
 app.use('/api',UserRouter)
 
